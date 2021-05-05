@@ -1,4 +1,6 @@
-// distanceFormula.cpp : This file contains the 'main' function. Program execution begins and ends there.
+// distanceFormula.cpp : 
+//demonstrate how to use sqrt and pow
+//calculate a complicated program
 //
 
 #include <iostream>
@@ -21,7 +23,6 @@ int main()
     cout << "Enter x2 and y2->";
     cin >> x2 >> y2;
 
-
     //create variables for steps in your code
     //reduces complexity of your algorithm
     double xsub = x1 - x2;
@@ -34,10 +35,7 @@ int main()
     double dist = sqrt(pow(xsub, 2) + pow(ysub, 2));
 
     cout << setprecision(1) << fixed;   //sticky manipulators, turn on they stay on
-
     cout << "Point 1 (" << x1 << ", " << y1 << ") ";
     cout << "Point 2 (" << x2 << ", " << y2 << ") " << endl;
     cout << "Distance is " << dist << endl;
-
-
 }
