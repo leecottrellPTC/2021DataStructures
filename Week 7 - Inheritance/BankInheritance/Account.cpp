@@ -1,4 +1,7 @@
 #include "Account.hpp"
+#include <sstream>
+#include <iomanip>
+#include <iostream>
 
 Account::Account()
 {
@@ -78,9 +81,15 @@ void Account::setBalance(double bal)
 #pragma region methods
 
 string Account::to_string(){
-    string output = "Account ";
-    output += acctNum +  " " + fname + " " + lname + " Balance $" + std::to_string(balance);
-    return output;
+   std::stringstream ss;
+    //thanks Mason for the ss to string trick
+
+
+    ss << "Account " << acctNum << ": " << fname << " " << lname << " ($" << fixed << setprecision(2) << balance << ")";
+
+
+
+    return ss.str();
 }
 
 bool Account::deposit(double amt){
@@ -104,7 +113,7 @@ bool Account::withdraw(double amt){
     }
 }
 
-bool Account::transfer(double amt, Account toAccount){
+bool Account::transfer(double amt, Account &toAccount){
     if(withdraw(amt) == false){
         return false;
     }

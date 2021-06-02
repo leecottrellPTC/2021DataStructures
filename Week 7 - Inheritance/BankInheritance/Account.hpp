@@ -30,7 +30,7 @@ class Account
 
 		bool deposit(double amt);
 		bool withdraw(double amt);
-		bool transfer(double amt, Account toAccount);
+		bool transfer(double amt, Account &toAccount);
 
 
 		Account(string AcctNum, string FirstName, string LastName, double Bal);
